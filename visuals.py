@@ -65,7 +65,6 @@ def evaluate(results, accuracy, f1):
 
     # Constants
     bar_width = 1 / (len(results.keys()) + 1)
-    #colors = ['#A00000','#00A0A0','#00A000']
     colors = sns.color_palette('Dark2') # generalized solution for multiple classifiers
     
     # Super loop to plot four panels of data
