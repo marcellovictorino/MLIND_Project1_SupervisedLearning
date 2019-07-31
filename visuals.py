@@ -11,6 +11,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 import matplotlib.pyplot as pl
 import matplotlib.patches as mpatches
+from matplotlib import cm # colormap
 import numpy as np
 import pandas as pd
 from time import time
@@ -64,7 +65,8 @@ def evaluate(results, accuracy, f1):
 
     # Constants
     bar_width = 0.3
-    colors = ['#A00000','#00A0A0','#00A000']
+    #colors = ['#A00000','#00A0A0','#00A000']
+    colors = pl.get_cmap('Dark2')
     
     # Super loop to plot four panels of data
     for k, learner in enumerate(results.keys()):
