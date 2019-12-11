@@ -5,7 +5,7 @@ This project was completed as part of the course requirements of Udacity's Machi
 
 The complete code and analysis rationale can be found in [this browser friendly version](https://github.com/marcellovictorino/MLIND_Project1_SupervisedLearning/blob/master/finding_donors.html) (download an open with your favorite browser) or the actual [jupyter notebook](https://github.com/marcellovictorino/MLIND_Project1_SupervisedLearning/blob/master/finding_donors.ipynb).
 
-!<--### Setup
+### Setup
 
 This project requires **Python >= 3.6** and the following Python libraries installed:
 
@@ -13,7 +13,7 @@ This project requires **Python >= 3.6** and the following Python libraries insta
 - [Pandas](http://pandas.pydata.org)
 - [matplotlib](http://matplotlib.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
--->
+
 
 ### Data
 
