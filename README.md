@@ -15,24 +15,18 @@ This project requires **Python >= 3.6** and the following Python libraries insta
 - [scikit-learn](http://scikit-learn.org/stable/)
 
 
-### Data
+### Overview
 
-The modified census dataset consists of approximately 32,000 data points, with each datapoint having 13 features. This dataset is a modified version of the dataset published in the paper *"Scaling Up the Accuracy of Naive-Bayes Classifiers: a Decision-Tree Hybrid",* by Ron Kohavi. You may find this paper [online](https://www.aaai.org/Papers/KDD/1996/KDD96-033.pdf), with the original dataset hosted on [UCI](https://archive.ics.uci.edu/ml/datasets/Census+Income).
+Analysis of the [modified version of the 1994 US census dataset](https://archive.ics.uci.edu/ml/datasets/Census+Income), having approximately 45,000 data points and 14 features. Particularly, investigating if there are any factors that could be used to model individuals' yearly income.
 
-**Features**
-- `age`: Age
-- `workclass`: Working Class (Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked)
-- `education_level`: Level of Education (Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool)
-- `education-num`: Number of educational years completed
-- `marital-status`: Marital status (Married-civ-spouse, Divorced, Never-married, Separated, Widowed, Married-spouse-absent, Married-AF-spouse)
-- `occupation`: Work Occupation (Tech-support, Craft-repair, Other-service, Sales, Exec-managerial, Prof-specialty, Handlers-cleaners, Machine-op-inspct, Adm-clerical, Farming-fishing, Transport-moving, Priv-house-serv, Protective-serv, Armed-Forces)
-- `relationship`: Relationship Status (Wife, Own-child, Husband, Not-in-family, Other-relative, Unmarried)
-- `race`: Race (White, Asian-Pac-Islander, Amer-Indian-Eskimo, Other, Black)
-- `sex`: Sex (Female, Male)
-- `capital-gain`: Monetary Capital Gains
-- `capital-loss`: Monetary Capital Losses
-- `hours-per-week`: Average Hours Per Week Worked
-- `native-country`: Native Country (United-States, Cambodia, England, Puerto-Rico, Canada, Germany, Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador, Trinadad&Tobago, Peru, Hong, Holand-Netherlands)
+The goal is to accurately identify an individuals' income, so the charity can focus their time and effort reaching out to people who are more likely to donate to their cause. Based on the fictitous case of CharityML, they have found from previous experience their target audience is people earning U$50k or more per year.
 
-**Target Variable**
-- `income`: Income Class (<=50K, >50K)
+Since the data is labelled, having the feature `income` informing the individual's yearly income class: >50k or <= 50k, this is clearly a case to apply Supervised Learning for Classification.
+
+After wrangling the data, applying transformation to normalize some features, and performing feature engineering, the final dataset goes from 14 to 103 features. The data is also normalized (scaled between 0 and 1) since it improves modeling performance and convergence.
+
+The data is divided using an 80/20 split for training/testing. Six models were trained usig default parameters so we can perform model evaluation (accuracy, precision, recall, and Fbeta score) to identify the best candidate, before performing hyperparameter tuning in order to optimize it (using random grid search with 5-fold cross-validation on the training split only).
+
+Finally, the best model is further investigated in order to evaluate its feature importance: allowing to better interpret the most impactful features identified by the model, and to double-check if the results are reasonable.
+> The exercise of model interpretability is a critical step to better communicate results, helping to gain the trust from decision makers and build support and confidence around the model.
+
