@@ -30,3 +30,9 @@ The data is divided using an 80/20 split for training/testing. Six models were t
 Finally, the best model is further investigated in order to evaluate its feature importance: allowing to better interpret the most impactful features identified by the model, and to double-check if the results are reasonable.
 > The exercise of model interpretability is a critical step to better communicate results, helping to gain the trust from decision makers and build support and confidence around the model.
 
+### Technologies Used
++ **Python:**
+    - Pandas, Numpy, Matplotlib, Scikit-Learn, Jupyter Notebook
++ **Machine Learning:**
+    - Logistic Regression, Random Forest, Extra Trees Classifier, AdaBoosting, Gradient Boosting, Gaussian Naive Bayes
+    - Hyperparameter tuning using Random Grid Search
