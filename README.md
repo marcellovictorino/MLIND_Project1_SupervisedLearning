@@ -36,3 +36,9 @@ Finally, the best model is further investigated in order to evaluate its feature
 + **Machine Learning:**
     - Logistic Regression, Random Forest, Extra Trees Classifier, AdaBoosting, Gradient Boosting, Gaussian Naive Bayes
     - Hyperparameter tuning using Random Grid Search
+
+### Main Takeaways
++ Hyperparamater tuning can only provide marginal gains to a model's performance. The main impact comes from understanding the data, preprocessing it accordingly and performing feature engineering.
++ Explaining an algorithm in layman's terms is a valuable exercise. It requires deeper understanding of how a model works to come up with simple and easy to understand explanations/analogies.
++ There is a reason why the Gradient Boosting model is being vastly implemented on classification problems: even though it does require more time to train, it yields great results with little prediction time. As member of the `ensembles` family, it also contains the `feature_importances` method, making it easy to interpret and evaluate the impact of each feature.
++ As a matter of fact, training the model using only the five most important features yielded classification results similar to the one trained using all features available. This wouls be an interesting approach to implement in cases with limited amount of time/resources for model training.
